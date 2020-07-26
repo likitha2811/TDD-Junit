@@ -1,0 +1,42 @@
+import static org.junit.jupiter.api.Assertions.*;
+
+import org.junit.jupiter.api.BeforeEach;
+import org.junit.jupiter.api.Test;
+
+class DeleteAAtest {
+	DeleteA d;
+	@BeforeEach
+	void setUp()
+	{
+		d=new DeleteA();
+	}
+	@Test
+	void test1char() {
+		
+		assertEquals("BCD",d.delete("ABCD"));
+		
+	}
+	@Test
+	void test2chars()
+	{
+	assertEquals("CD",d.delete("AACD"));
+	
+		
+	}
+@Test
+void testchar() {
+	assertEquals("BCD",d.delete("BACD"));
+	
+}
+@Test
+void testzchar() {
+	
+	assertEquals("BBAA",d.delete("BBAA"));
+	
+}
+@Test
+void testtchar() {
+	assertEquals("BAA",d.delete("AABAA"));
+	
+}
+}
